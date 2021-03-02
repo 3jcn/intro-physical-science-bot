@@ -1,10 +1,10 @@
 import streamlit as st
+import pywhatkit
 import io
 from PIL import Image
 import string
 import random
 import pyttsx3
-import pywhatkit
 import pyautogui as pg
 import wikipedia
 import datetime
