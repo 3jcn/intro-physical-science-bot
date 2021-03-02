@@ -5,6 +5,7 @@ import string
 import random
 import pyttsx3
 import pywhatkit
+import pyautogui as pg
 import wikipedia
 import datetime
 import webbrowser
