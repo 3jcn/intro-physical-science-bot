@@ -222,6 +222,8 @@ def run_query(input):
         talk(outp)
     else:
         talk("Please repeat your question again.")
+	
+	
 def wakeWord(text):
     wake_list = ['max', 'hi max', 'hey max', 'hello max', 'hola max']
     text = text.lower()
