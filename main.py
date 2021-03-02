@@ -236,7 +236,7 @@ def wakeWord(text):
 
 def start_function():
     talk("Hi, my name is Max. I am professor Nguyen's assistant.")
-    talk("How may I help you with physical science 110?")
+    talk("How may I help you with first five chapters?")
     with sr.Microphone() as source:                
         while True:
             r.adjust_for_ambient_noise(source)
