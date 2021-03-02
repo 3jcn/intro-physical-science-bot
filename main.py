@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import string
 import random
+import pywhatkit
 import speech_recognition as sr
 from run_query import run_query, talk
 import warnings
