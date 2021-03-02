@@ -276,9 +276,9 @@ st.markdown("""
 
 with header:
     st.text('@Author: Thomas Nguyen Date: 28 Feb 2021')
-    st.title('Virtual Assistant for Introductory of Physical Science')
-    st.text('Physical Science is a branch of Natural Science that studies non-living systems.')
-    st.text('It has five major divisions: physics, chemistry, astronomy, geology, and meteorology.')
+    st.title('Virtual Assistant for Introductory of Physical Science - PSC 110')
+    image = Image.open('max.png')
+    st.image(image,width=240,height=300)
 
     html_temp = """
 	<div style="background-color:tomato; padding:10px">
@@ -295,9 +295,7 @@ with header:
     button_start = st.button('Start Conversation')
     if button_start:
     	start_function()
-    st.text("Say 'bye Max' to stop the conversation or click 'Stop' button on the top right corner of the page.")
-    image = Image.open('max.png')
-    st.image(image,use_column_width=True)
+    st.text("Say 'bye Max' to stop the conversation or click 'Stop' button on the top right corner.")
 
 ############################################################################       
 # Unintelligible Speech: When Python cannot match some audio to text, it raises an UnknownValueError exception.
