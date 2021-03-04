@@ -1,5 +1,5 @@
 import pyttsx3
-import pywhatkit
+#import pywhatkit
 import wikipedia
 import datetime
 import webbrowser
@@ -18,13 +18,13 @@ def run_query(input):
     if 'play' in input:
         song = input.replace('play','')
         talk('playing...'+ song)
-        pywhatkit.playonyt(song)
+        #pywhatkit.playonyt(song)
     elif 'who is' in input:
         person = input.replace('who is','')
         info = wikipedia.summary(person,1)
         talk(info)
     elif 'search google' in input:
-        pywhatkit.search(input)
+        #pywhatkit.search(input)
         talk('searching from google')
     elif 'what time is it' in input:
         time = datetime.datetime.now().strftime('%I:%M %p')
