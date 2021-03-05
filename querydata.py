@@ -3,7 +3,7 @@ import pyttsx3
 import wikipedia
 import datetime
 import webbrowser
-import comtypes.client
+import comtypes
 
 def talk(text):
     engine = pyttsx3.init('sapi5') #('sapi5')
