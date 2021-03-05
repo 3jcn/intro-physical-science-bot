@@ -6,7 +6,7 @@ import webbrowser
 
 
 def talk(text):
-    engine = pyttsx3.init('espeak')
+    engine = pyttsx3.init('dummy')
     voices = engine.getProperty('voices')
     engine.setProperty('voice',voices[0].id)
     engine.setProperty('rate', 170)
