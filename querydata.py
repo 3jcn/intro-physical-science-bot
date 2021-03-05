@@ -1,5 +1,5 @@
 import pyttsx3
-import pyaudio
+#import pyaudio
 #import pywhatkit
 import wikipedia
 import datetime
