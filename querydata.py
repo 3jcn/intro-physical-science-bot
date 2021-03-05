@@ -1,5 +1,4 @@
 import pyttsx3
-import libespeak1
 #import pywhatkit
 import wikipedia
 import datetime
