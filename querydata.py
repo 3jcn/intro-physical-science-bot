@@ -1,11 +1,11 @@
 import pyttsx3
-import pywhatkit
+#import pywhatkit
 import wikipedia
 import datetime
 import webbrowser
 
 def talk(text):
-    engine = pyttsx3.init('sapi5')
+    engine = pyttsx3.init('dummy')
     voices = engine.getProperty('voices')
     engine.setProperty('voice',voices[0].id)
     engine.setProperty('rate', 170)
