@@ -1,5 +1,5 @@
 import pyttsx3
-#import pywhatkit
+import pywhatkit
 import wikipedia
 import datetime
 import webbrowser
