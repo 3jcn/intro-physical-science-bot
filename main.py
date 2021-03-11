@@ -34,7 +34,7 @@ def start_function():
                 #command = command.lower()
                 #print("You said: " + command) 
 
-                if 'no' in command:   
+                if 'no' == command:   
                     out='On behalf of professor Nguyen, thank you for studying. Chat with you later. Bye.'
                     talk(out)
                     break
