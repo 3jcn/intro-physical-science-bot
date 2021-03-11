@@ -1,4 +1,4 @@
-import pyttsx3
+import pyttsx
 #import pywhatkit
 import wikipedia
 import datetime
@@ -8,7 +8,7 @@ import webbrowser
 # in 'driver.py' change "except Exception, e:" to "except Exception as e:"
 
 def talk(text):
-    engineio = pyttsx3.init()
+    engineio = pyttsx.init()
     voices = engineio.getProperty('voices')
     engineio.setProperty('voice',voices[0].id)
     engineio.setProperty('rate', 170)
