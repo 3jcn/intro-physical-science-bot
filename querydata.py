@@ -3,6 +3,9 @@ import pyttsx
 import wikipedia
 import datetime
 import webbrowser
+# from engine import Engine  --> 'engine' is a module, but '.engine' is a file in "site-packages/pyttsx/_init_.py"
+# in 'engine.py' change "import driver" to "from . import driver"
+# in 'driver.py' change "except Exception, e:" to "except Exception as e:"
 
 def talk(text):
     engine = pyttsx.init()
