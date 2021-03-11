@@ -8,7 +8,7 @@ import webbrowser
 # in 'driver.py' change "except Exception, e:" to "except Exception as e:"
 
 def talk(text):
-    engineio = pyttsx.init()
+    engineio = pyttsx.init('sapi5')
     voices = engineio.getProperty('voices')
     engineio.setProperty('voice',voices[0].id)
     engineio.setProperty('rate', 170)
