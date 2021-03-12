@@ -1,5 +1,4 @@
 import pyttsx3
-import subprocess
 #import pywhatkit
 import wikipedia
 import datetime
@@ -7,9 +6,6 @@ import webbrowser
 # from engine import Engine  --> 'engine' is a module, but '.engine' is a file in "site-packages/pyttsx/_init_.py"
 # in 'engine.py' change "import driver" to "from . import driver"
 # in 'driver.py' change "except Exception, e:" to "except Exception as e:"
-def espeak(text: str, pitch: int=50) -> int:
-    """ Use espeak to convert text to speech. """
-    return subprocess.run(['espeak', f'-p {pitch}', text]).returncode
 
 def talk(text):
     engine = pyttsx3.init()
