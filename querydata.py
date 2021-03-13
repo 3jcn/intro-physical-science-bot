@@ -1,5 +1,4 @@
 import pyttsx3
-import win32com
 #import pywhatkit
 import wikipedia
 import datetime
