@@ -4,8 +4,7 @@ import wikipedia
 import datetime
 import webbrowser
 # from engine import Engine  --> 'engine' is a module, but '.engine' is a file in "site-packages/pyttsx/_init_.py"
-# in 'engine.py' change "import driver" to "from . import driver"
-# in 'driver.py' change "except Exception, e:" to "except Exception as e:"
+
 
 def talk(text):
     engine = pyttsx3.init('dummy')
@@ -15,6 +14,8 @@ def talk(text):
     engine.say(text)
     engine.runAndWait()
 
+# PROFESSOR'S TAILORED QUESTIONS & ANSWERS LIST:
+# to avoid a general answer from wikipedia
 def run_query(input):
     outp = ''
     if 'play' in input:
