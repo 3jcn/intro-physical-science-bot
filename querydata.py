@@ -1,5 +1,6 @@
-import pyttsx3
+#import pyttsx3
 #import pywhatkit
+from gtts import gTTS
 import wikipedia
 import datetime
 import webbrowser
