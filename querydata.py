@@ -6,13 +6,20 @@ import webbrowser
 # from engine import Engine  --> 'engine' is a module, but '.engine' is a file in "site-packages/pyttsx/_init_.py"
 
 
-def talk(text):
+def noi(text):
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
     engine.setProperty('voice',voices[0].id)
     engine.setProperty('rate', 170)
     engine.say(text)
     engine.runAndWait()
+    
+def talk(text):                         
+      speech = gTTS(text, lang = 'en', slow = False)
+      speech.save('trans.mp3') 
+      audio_file = open('trans.mp3', 'rb')            
+      audio_bytes = audio_file.read()            
+      st.audio(audio_bytes, format='audio/ogg',start_time=0)
 
 # PROFESSOR'S TAILORED QUESTIONS & ANSWERS LIST:
 # to avoid a general answer from wikipedia
