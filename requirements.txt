@@ -1,5 +1,6 @@
-pyttsx3==2.90
+#pyttsx3==2.90
 streamlit==0.79.0
 SpeechRecognition==3.8.1
+gTTS==2.2.2
 wikipedia==1.4.0
 Pillow==8.2.0
