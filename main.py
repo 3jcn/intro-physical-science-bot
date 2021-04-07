@@ -18,9 +18,9 @@ info = ''
 pyglet.options["audio"] = ("pulse",)
 TICK = .1
 
-def talk(words: str, lang: str="en"):
+def talk(text):
     with io.BytesIO() as f:
-        gTTS(text=words, lang=lang).write_to_fp(f)
+        gTTS(text, lang='en',slow=True).write_to_fp(f)
         f.seek(0)
         sound = pyglet.media.load("_.mp3", file=f)
     player = sound.play()
