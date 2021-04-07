@@ -18,6 +18,7 @@ def talk(text):
       speech = gTTS(text, lang = 'en', slow = False)
       f = TemporaryFile()
       speech.write_to_fp(f)
+      Play f
       f.close()
       #speech.save('trans.mp3') 
       #audio_file = open('trans.mp3', 'rb')            
