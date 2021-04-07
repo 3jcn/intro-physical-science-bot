@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import time
 from gtts import gTTS
+from tempfile import TemporaryFile
 import wikipedia
 import datetime
 import webbrowser
@@ -15,10 +16,13 @@ info = ''
 
 def talk(text):                         
       speech = gTTS(text, lang = 'en', slow = False)
-      speech.save('trans.mp3') 
-      audio_file = open('trans.mp3', 'rb')            
-      audio_bytes = audio_file.read()            
-      st.audio(audio_bytes, format='audio/ogg',start_time=0)
+      f = TemporaryFile()
+      speech.write_to_fp(f)
+      f.close()
+      #speech.save('trans.mp3') 
+      #audio_file = open('trans.mp3', 'rb')            
+      #audio_bytes = audio_file.read()            
+      #st.audio(audio_bytes, format='audio/ogg',start_time=0)
 	
 def start_function():
     talk("Hi, my name is Max. I am professor Nguyen's assistant bot. How may I help you with chapter 5, temperature and heat, or related topics?")
