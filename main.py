@@ -20,9 +20,10 @@ TICK = .1
 
 def talk(text):
     with io.BytesIO() as f:
-        gTTS(text, lang='en',slow=True).write_to_fp(f)
-        f.seek(0)
-        sound = pyglet.media.load("_.mp3", file=f)
+        sp = gTTS(text, lang='en',slow=True)
+	sp.save('trans.mp3')    #.write_to_fp(f)
+        #f.seek(0)
+        sound = pyglet.media.load("trans.mp3")
     player = sound.play()
     while player.playing:
         pyglet.app.platform_event_loop.dispatch_posted_events()
