@@ -2,7 +2,8 @@ import streamlit as st
 from PIL import Image
 import time
 from gtts import gTTS
-import pygame
+#import pygame
+import pyglet
 import wikipedia
 import datetime
 import webbrowser
@@ -14,15 +15,26 @@ warnings.filterwarnings('ignore')
 
 info = ''
 
-def talk(text):                         
+pyglet.options["audio"] = ("pulse",)
+TICK = .1
+
+def talk(words: str, lang: str="en"):
+    with io.BytesIO() as f:
+        gTTS(text=words, lang=lang).write_to_fp(f)
+        f.seek(0)
+        sound = pyglet.media.load("_.mp3", file=f)
+    player = sound.play()
+    while player.playing:
+        pyglet.app.platform_event_loop.dispatch_posted_events()
+        pyglet.clock.tick()
+        time.sleep(TICK)
+	
+def talk2(text):                         
       speech = gTTS(text, lang = 'en', slow = False)
       speech.save('trans.mp3') 
-      pygame.mixer.init()
-      pygame.mixer.music.load('trans.mp3')
-      pygame.mixer.music.play()
-      #audio_file = open('trans.mp3', 'rb')            
-      #audio_bytes = audio_file.read()            
-      #st.audio(audio_bytes, format='audio/ogg',start_time=0)
+      audio_file = open('trans.mp3', 'rb')            
+      audio_bytes = audio_file.read()            
+      st.audio(audio_bytes, format='audio/ogg',start_time=0)
 	
 def start_function():
     talk("Hi, my name is Max. I am professor Nguyen's assistant bot. How may I help you with chapter 5, temperature and heat, or related topics?")
