@@ -18,8 +18,8 @@ info = ''
 
 mymidia_placeholder = st.empty()
 sp = gTTS(text='Hello there', lang = 'en', slow = False)
-sp.save('trans.mp3') 
-audio_file = open('trans.mp3', 'rb')            
+sp.save('tran.mp3') 
+audio_file = open('tran.mp3', 'rb')            
 audio_bytes = audio_file.read()       
 mymidia_str = "data:audio/ogg;base64,%s"%(base64.b64encode(audio_bytes).decode())
 mymidia_html = """
