@@ -276,30 +276,21 @@ def run_query(input):
     st.write(info)
 
 def start_function():
-    talk("Hi, my name is Max. I am professor Nguyen's assistant.")
-    talk("How may I help you with chapter 5, temperature and heat, or related topics?")
+    talk("Hi, my name is Max. I am professor Nguyen's assistant. How may I help you with chapter 5, temperature and heat, or related topics?")
     r = sr.Recognizer()
 
     with sr.Microphone() as source:                
         while True:
-            #r.energy_threshold = 5000
-            #r.adjust_for_ambient_noise(source,duration=2)
-            #r.dynamic_energy_threshold = True
-            #r.pause_threshold = 0.5
             audio = r.listen(source)
             try:
                 command = r.recognize_google(audio)
-                #command = command.lower()
-                #print("You said: " + command) 
 
                 if 'no' in command:   
                     out='On behalf of professor Nguyen, thank you for studying. Chat with you later. Bye.'
                     talk(out)
                     break
                 else:
-                    #if(wakeWord(command)==True):
                     run_query(command)
-                    talk('do you have another question?')
             except:
                 pass
 	
