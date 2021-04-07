@@ -10,12 +10,27 @@ import webbrowser
 from IPython.display import Audio
 #import pywhatkit
 import speech_recognition as sr
+import base64
 import warnings
 warnings.filterwarnings('ignore')
 
 info = ''
 
-def talk(my_text):
+mymidia_placeholder = st.empty()
+
+mymidia_str = "data:audio/ogg;base64,%s"%(base64.b64encode(mymidia_bytes).decode())
+mymidia_html = """
+                <audio autoplay class="stAudio">
+                <source src="%s" type="audio/ogg">
+                Your browser does not support the audio element.
+                </audio>
+            """%mymidia_str
+
+mymidia_placeholder.empty()
+time.sleep(1)
+mymidia_placeholder.markdown(mymidia_html, unsafe_allow_html=True)
+
+def speak(my_text):
     with io.BytesIO() as f:
         gTTS(text=my_text, lang='en').write_to_fp(f)
         f.seek(0)
