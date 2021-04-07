@@ -16,11 +16,10 @@ info = ''
 
 def talk(text):                         
       speech = gTTS(text, lang = 'en', slow = False)
-      f = TemporaryFile()
-      speech.write_to_fp(f)
-      Play f
-      f.close()
-      #speech.save('trans.mp3') 
+      speech.save('trans.mp3') 
+      pygame.mixer.init()
+      pygame.mixer.music.load('trans.mp3')
+      pygame.mixer.music.play()
       #audio_file = open('trans.mp3', 'rb')            
       #audio_bytes = audio_file.read()            
       #st.audio(audio_bytes, format='audio/ogg',start_time=0)
