@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import time
 from gtts import gTTS
-from tempfile import TemporaryFile
+import pygame
 import wikipedia
 import datetime
 import webbrowser
