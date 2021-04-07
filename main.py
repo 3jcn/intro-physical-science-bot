@@ -17,8 +17,11 @@ warnings.filterwarnings('ignore')
 info = ''
 
 mymidia_placeholder = st.empty()
-
-mymidia_str = "data:audio/ogg;base64,%s"%(base64.b64encode(mymidia_bytes).decode())
+sp = gTTS(text, lang = 'en', slow = False)
+sp.save('trans.mp3') 
+audio_file = open('trans.mp3', 'rb')            
+audio_bytes = audio_file.read()       
+mymidia_str = "data:audio/ogg;base64,%s"%(base64.b64encode(audio_bytes).decode())
 mymidia_html = """
                 <audio autoplay class="stAudio">
                 <source src="%s" type="audio/ogg">
@@ -36,7 +39,7 @@ def speak(my_text):
         f.seek(0)
         return Audio(f.read(), autoplay=True)
 	
-def talk2(text):                         
+def talk(text):                         
       speech = gTTS(text, lang = 'en', slow = False)
       speech.save('trans.mp3') 
       audio_file = open('trans.mp3', 'rb')            
