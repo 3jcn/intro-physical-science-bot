@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import time
 from gtts import gTTS
-#import pygame
+import io
 import pyglet
 import wikipedia
 import datetime
