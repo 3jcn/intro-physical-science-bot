@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 info = ''
 
 mymidia_placeholder = st.empty()
-sp = gTTS(text, lang = 'en', slow = False)
+sp = gTTS(text='Hello there', lang = 'en', slow = False)
 sp.save('trans.mp3') 
 audio_file = open('trans.mp3', 'rb')            
 audio_bytes = audio_file.read()       
