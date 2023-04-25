@@ -13,6 +13,8 @@ import speech_recognition as sr
 import base64
 import warnings
 warnings.filterwarnings('ignore')
+## integrate Chatgpt into python:
+# import openai
 
 info = ''
 
@@ -66,6 +68,25 @@ def start_function():
                 pass
 
 def run_query(input):
+############################################################################	
+'''
+# Initialize the OpenAI API client, This specifies which GPT model to use, as there are several models available, 
+# each with different capabilities and performance characteristics.
+	openai.api_key = "YOUR_API_KEY_HERE"
+	model_engine = "gpt-3.5-turbo" 
+# Now call the openai.Completion.create() function to generate text using the ChatGPT language model. 
+# Here's an example of how to generate a response to a given prompt. Note there is an initial "system" prompt, followed by the user's question:
+response = openai.ChatCompletion.create(
+    model='gpt-3.5-turbo',
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Hello, ChatGPT!"},
+    ])
+
+message = response.choices[0]['message']
+print("{}: {}".format(message['role'], message['content']))
+'''
+#############################################################################
     if 'play' in input:
         song = input.replace('play','')
         talk('playing...'+ song)
